@@ -52,42 +52,42 @@ SUITE(decshifr)
 {
     const int key = 4;
     Cipher test(key);
-    TEST(BOLSHIE_BUKV) {
+    TEST(B) {
         wstring cipher_text = L"ЗОДВААР";
         wstring result_correct = L"ЗДАРОВА";
         CHECK_EQUAL(true, result_correct == test.DecodeCipher(test,cipher_text));
     }
-    TEST(mahonkie_bukovki) {
+    TEST(m) {
         wstring cipher_text = L"зодваар";
         wstring result_correct = L"здарова";
         CHECK_EQUAL(true, result_correct == test.DecodeCipher(test,cipher_text));
     }
-    TEST(BIG_L) {
+    TEST(Eng) {
         wstring cipher_text = L"FASFAFAFDFSA";
         wstring result_correct = L"FADAFFSASFFA";
         CHECK_EQUAL(true, result_correct == test.DecodeCipher(test,cipher_text));
     }
-    TEST(mini_l) {
+    TEST(min) {
         wstring cipher_text = L"gsdgsdgqgqrgqgq";
         wstring result_correct = L"gsgqsdqgdgrqgqg";
         CHECK_EQUAL(true, result_correct == test.DecodeCipher(test,cipher_text));
     }
-    TEST(mix_bukv_an_letters) {
+    TEST(mix) {
         wstring cipher_text = L"здаfeafsa";
         wstring result_correct = L"зeaдa аf fs";
         CHECK_EQUAL(true, result_correct == test.DecodeCipher(test,cipher_text));
     }
-    TEST(special) {
+    TEST(simvol) {
         wstring cipher_text = L"*&$@$$@$%!";
         wstring result_correct = L"*$%&$!$@ @$ ";
         CHECK_EQUAL(true, result_correct == test.DecodeCipher(test,cipher_text));
     }
-    TEST(cifri) {
+    TEST(cifr) {
         wstring cipher_text = L"532145321421";
         wstring result_correct = L"541354232121";
         CHECK_EQUAL(true, result_correct == test.DecodeCipher(test,cipher_text));
     }
-    TEST(all_simbols) {
+    TEST(all) {
         wstring cipher_text = L"Gs rwq13$@37ауф";
         wstring result_correct = L"Gw$аsq@у 13фr37";
         CHECK_EQUAL(true, result_correct == test.DecodeCipher(test,cipher_text));
@@ -117,7 +117,7 @@ SUITE(excst)
 
 SUITE(exckl)
 {
-    wstring test = L"kotiki";
+    wstring test = L"client";
     TEST(praviln_kl) {
         CHECK_EQUAL(7, Error::Check_k (test,"3"));
     }
