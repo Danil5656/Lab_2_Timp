@@ -7,42 +7,42 @@ SUITE(EncodeCipher)
 {
     const int key = 4;
     Cipher test(key);
-    TEST(BOLSHIE_BUKV) {
+    TEST(B) {
         wstring open_text = L"ЗДАРОВА";
         wstring result_correct = L"ЗОДВААР";
         CHECK_EQUAL(true, result_correct == test.EncodeCipher(test,open_text));
     }
-    TEST(mahonkie_bukovki) {
+    TEST(mal) {
         wstring open_text = L"здарова";
         wstring result_correct = L"зодваар";
         CHECK_EQUAL(true, result_correct == test.EncodeCipher(test,open_text));
     }
-    TEST(BIG_L) {
+    TEST(B_L) {
         wstring open_text = L"FASFAFAFDFSA";
         wstring result_correct = L"FADAFFSASFFA";
         CHECK_EQUAL(true, result_correct == test.EncodeCipher(test,open_text));
     }
-    TEST(mini_l) {
+    TEST(min) {
         wstring open_text = L"gsdgsdgqgqrgqgq";
         wstring result_correct = L"gsgqsdqgdgrqgqg";
         CHECK_EQUAL(true, result_correct == test.EncodeCipher(test,open_text));
     }
-    TEST(mix_bukv_an_letters) {
+    TEST(mix) {
         wstring open_text = L"здаfeafsa";
         wstring result_correct = L"зeaдa аf fs";
         CHECK_EQUAL(true, result_correct == test.EncodeCipher(test,open_text));
     }
-    TEST(special) {
+    TEST(simvol) {
         wstring open_text = L"*&$@$$@$%!";
         wstring result_correct = L"*$%&$!$@ @$";
         CHECK_EQUAL(true, result_correct == test.EncodeCipher(test,open_text));
     }
-    TEST(cifri) {
+    TEST(cifr) {
         wstring open_text = L"532145321421";
         wstring result_correct = L"541354232121";
         CHECK_EQUAL(true, result_correct == test.EncodeCipher(test,open_text));
     }
-    TEST(all_simbols) {
+    TEST(all) {
         wstring open_text = L"Gs rwq13$@37ауф";
         wstring result_correct = L"Gw$аsq@у 13фr37";
         CHECK_EQUAL(true, result_correct == test.EncodeCipher(test,open_text));
